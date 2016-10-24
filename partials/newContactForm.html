@@ -1,0 +1,40 @@
+ <div class="col-sm-12">
+         <div class="row">
+             <h3>Add New Contact</h3>
+         </div>
+         <div class="row"> 
+             <form name="newContactForm">
+               
+                <div class="form-group" ng-class="{ 'has-error' : newContactForm.name.$invalid && !newContactForm.name.$pristine }">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" ng-model="newContact.name" required>
+                    <p ng-show="newContactForm.name.$invalid && !newContactForm.name.$pristine" class="help-block">You name is required.</p>
+                </div>
+
+                 <div class="form-group" ng-class="{ 'has-error' : newContactForm.email.$invalid && !newContactForm.email.$pristine }">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" ng-model="newContact.email">
+                    <p ng-show="newContactForm.email.$invalid && !newContactForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                </div>
+
+                 <div class="form-group">
+                    <label>Job</label>
+                    <input type="text" name="job" class="form-control" ng-model="newContact.job">
+                 </div>
+
+                 <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" name="location" class="form-control" ng-model="newContact.location">
+                 </div>
+
+                <div class="form-group">
+                    <label>Tag</label>
+                    <input type="text" name="tag" class="form-control" ng-model="newContact.tag">
+                 </div>
+                  
+             </form>
+             <button ng-click="saveContact()" class="btn btn-primary" ng-disabled="newContactForm.$invalid">Submit</button>
+         </div>
+</div>
+
+  

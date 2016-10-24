@@ -1,0 +1,51 @@
+<div class="container" style="height:100%">
+        <div class="row text-center">
+                <div class=col-sm-12>
+                        <h2>My Contacts</h2>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-sm-4">
+                       <contacts-list contacts="contacts" 
+                                      viewContact="viewContact(contact)"
+                                      newContact="newContact()" >
+                      </contacts-list>
+                </div>
+                <div class="col-sm-8">
+                         <div class="col-sm-12">
+                                        <div ng-if="mode==='view'">     
+                                                        <div class="panel panel-primary text-center">
+                                                                <div class="panel-heading">
+                                                                        <h3>{{selectedContact.name}}</h3>
+                                                                </div>
+    		                                                <div class="panel-body">
+    			                                                <img alt="Avatar" class="img-md img-circle img-border mar-btm" src="{{selectedContact.avatar}}">
+    			                                                <h4>{{selectedContact.job}}</h4>
+                                                                        <p>{{selectedContact.location}}</p>
+    		                                                </div>
+                                                                <div class="panel-footer">
+                                                                        <p>{{selectedContact.email}}</p>
+                                                                       <h4><span class="label label-default">{{selectedContact.tag}}</span></h4>
+                                                                </div>
+    	                                                </div>    
+                                        </div>
+                                        <div ng-if="mode==='new'">
+                                                <new-contact-form>
+                                                </new-contact-form>
+                                        </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<!--
+   <div class="col-sm-4">
+                                                                {{selectedContact.avatar}}  
+                                                        </div> 
+                                                        <div class="col-sm-8">
+                                                                
+                                                        </div>
+                                                </div>
+
+                                                <div class="row">
+                                                       
+                                                </div>   -->

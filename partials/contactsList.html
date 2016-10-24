@@ -1,0 +1,35 @@
+<div class="panel">
+<div class="row" style="">
+        <div class="input-group col-md-12"> 
+            <input type="text" class="form-control input-lg" placeholder="Search"  ng-model="searchTerm"/>
+        </div>
+</div>
+<div class="row">
+    <div class="wrapper">
+        <div class="content">
+            <ul class="list-group">
+                <li ng-repeat="contact in contacts | filter: filterFunction" 
+                    class="list-group-item" 
+                    ng-click="viewContact(contact)">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="circle-avatar" style="background-image:url({{contact.avatar}})"></div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <h4>{{contact.name}}</h4>
+                            </div>
+                            <div class="row">
+                                {{contact.email}}
+                            </div>
+                        </div>
+                    </div>
+                 </li>
+            </ul>
+        </div>
+        <div class="footer">
+              <button class="btn btn-primary btn-lg btn-block" ng-click="newContact()">Add New Contact</button>
+        </div>
+    </div>
+</div>
+
